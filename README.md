@@ -1,1 +1,1 @@
-# JDBC_Project_B18
+# JDBC Project for Batch 18
