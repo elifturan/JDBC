@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         //Replace the IP with your own IP address
-        String connectionStr = "jdbc:oracle:thin:@52.71.242.164:1521:XE";
+        String connectionStr = "jdbc:oracle:thin:@YOUR_IP_HERE:1521:XE";
         String username = "hr";
         String password = "hr";
 
@@ -13,6 +13,9 @@ public class Main {
         Connection conn = DriverManager.getConnection(connectionStr,username,password);
         // CREATING SIMPLE STATEMENT (forward only)
         Statement stmt = conn.createStatement();
+        // CREATING STATEMENT with maximum flexibility of moving up and down from rows
+        //Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+
         // GETTING RESULTSET OF THE QUERY
         ResultSet rs = stmt.executeQuery("SELECT * FROM REGIONS");
         // initially the cursor is at the location before first line of the resulting table
