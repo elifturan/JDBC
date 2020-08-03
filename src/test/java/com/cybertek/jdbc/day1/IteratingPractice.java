@@ -23,7 +23,9 @@ public class IteratingPractice {
                              + rs.getInt(3) ); /// this is getting region id as number instead of String
 
         }
-        rs.previous();
+//        rs.previous();
+
+
 
 
     }

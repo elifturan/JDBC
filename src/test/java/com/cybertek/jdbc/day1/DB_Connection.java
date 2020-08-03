@@ -60,9 +60,16 @@ public class DB_Connection {
         System.out.println("second column value using index: --> " + rs.getString(2) ) ;
         System.out.println("second column value using column_name: --> " + rs.getString("REGION_NAME") ) ;
 
+        // ORDER WE CREATED
+        // CONNECTION -->> STATEMENT --->> RESULTSET
 
-
-
+        // ORDER WHEN WE CLOSE
+        // RESULTSET -->> STATEMENT --> CONNECTION
+        /// IT'S ALWAYS GOOD PRACTICE TO CLOSE THE RESOURCES ONCE FINISH USING THEM
+        // TO AVOID ISSUES LATER.
+        rs.close();
+        stmnt.close();
+        conn.close();
 
         System.out.println("THE END ");
 
