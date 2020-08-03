@@ -47,11 +47,18 @@ public class DB_Connection {
         // getting the column data  we use multiple get methods available in ResultSet
         //  print out region id and region name  , both as String
         System.out.println("first column value using index: --> " +  rs.getString(1)   );
-        System.out.println("first column value using column_name: --> " +  rs.getString("REGION_ID")   );
+        System.out.println("first column value using column_name: --> " + rs.getString("REGION_ID")   );
         // printing out second column data
         System.out.println("second column value using index: --> " + rs.getString(2) ) ;
         System.out.println("second column value using column_name: --> " + rs.getString("REGION_NAME") ) ;
 
+        // try to move to next row and get second row data as a task
+        rs.next();
+        System.out.println("first column value using index: --> " +  rs.getString(1)   );
+        System.out.println("first column value using column_name: --> " + rs.getString("REGION_ID")   );
+        // printing out second column data
+        System.out.println("second column value using index: --> " + rs.getString(2) ) ;
+        System.out.println("second column value using column_name: --> " + rs.getString("REGION_NAME") ) ;
 
 
 
