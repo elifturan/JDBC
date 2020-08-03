@@ -16,11 +16,15 @@ public class IteratingResultSet {
         // as long as rs.next() return true I know I have next row to print the data
         // we will keep looping as long as rs.next() return true
 
-        while (rs.next() == true ){
+        while (rs.next() == true ){   //while ( rs.next() ){
 
             System.out.println( rs.getString("REGION_ID") + " " + rs.getString("REGION_NAME") );
 
         }
+
+        // TASK 1 :
+        //  CREATE A NEW CLASS , ADD CONNECTION , STATEMENT , RESULTSET
+        // AND TRY TO PRINT OUT EACH AND EVERYTHING UNDER COUNTRIES TABLE
 
 
 
