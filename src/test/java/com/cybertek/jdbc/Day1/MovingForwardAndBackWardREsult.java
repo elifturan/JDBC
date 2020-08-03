@@ -27,6 +27,22 @@ public class MovingForwardAndBackWardREsult {
         rs.previous();
         System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
 
+      //  rs.previous();
+       // System.out.println(rs.getString("COUNTRY_ID")+" "+ rs.getString("COUNTRY_NAME"));
+
+        //MOVING THE CURSOR FREELY BETWEEN ROWS
+       // rs.previous(); we are at first row , this will move us to before first location
+        //System.out.println(rs.getString("COUNTRY_ID")+" "+ rs.getString("COUNTRY_NAME"));
+
+        //moving to the last row directly
+        rs.last(); // this will move to cursor to the last location
+        System.out.println(rs.getString("COUNTRY_ID")+" "+ rs.getString("COUNTRY_NAME"));
+
+        rs.first();
+        System.out.println(rs.getString("COUNTRY_ID")+" "+ rs.getString("COUNTRY_NAME"));
+
+        rs.absolute(5);
+        System.out.println(rs.getString("COUNTRY_ID")+" "+ rs.getString("COUNTRY_NAME"));
 
 
     }
