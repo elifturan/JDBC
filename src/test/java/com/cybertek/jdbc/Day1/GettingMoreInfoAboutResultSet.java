@@ -9,45 +9,27 @@ public class GettingMoreInfoAboutResultSet {
         String username = "hr";
         String password = "hr";
         Connection conn = DriverManager.getConnection(connectionStr, username, password);
-        // if we create the Statement in this way , this will generate a forward only resultset
-        // meaning we can only move forward with next() and can not move backward with previous
-        //Statement stmnt = conn.createStatement();
-
-        // ResultSet.TYPE_SCROLL_INSENSITIVE will make the resultset created from this statement
-        // be able to move forward and backward ,
-        // ResultSet.CONCUR_READ_ONLY  will make resultset readonly and that's what we need
         Statement stmnt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        //ResultSet rs   =   stmnt.executeQuery("SELECT * FROM COUNTRIES WHERE REGION_ID = 1") ;
-        ResultSet rs = stmnt.executeQuery("SELECT * FROM COUNTRIES");
+        ResultSet rs = stmnt.executeQuery("SELECT * FROM EMPLOYEES ");
 
-        rs.next();
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+        // ResultSetMetadata is data about the ResultSet like column count , column name
+        // any many more info about the ResultSet itself
+        ResultSetMetaData rsmd = rs.getMetaData();
+        // counting how many columns we have in our ResultSet object
+        int columnCount =  rsmd.getColumnCount() ;
+        System.out.println("columnCount = " + columnCount);
 
-        rs.next();
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
-        // HOW DO I GO BACK TO PREVIOUS ROW
-        rs.previous();
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
-        // MOVING THE CURSOR FREELY between rows
-//        rs.previous();  we are at first row , this will move us to beforefirst location
-//        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+        // find out column name according to the index
+        String secondColumnName = rsmd.getColumnName(2);
+        System.out.println("secondColumnName = " + secondColumnName);
 
-        //  moving to the last row directly
-        rs.last();   // this will move the cursor to the last row location
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
-        rs.first();  // this will move the cursor to the first row location
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
-        rs.absolute(5) ; // this will move the cursor directly to the 5 th row
-        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+        // How to list all the column names from the ResultSet
+        // you know how many column we have using getColumnCount method
+        // you know how to get column name from index getColumnName method
 
-        // how to move to before first row location
-        rs.beforeFirst();
-        // how to move to after last row location
-        rs.afterLast();
-
-
-
-
+        for (int i = 1; i <= columnCount; i++) {
+            System.out.println( rsmd.getColumnName(i) ) ;
+        }
 
 
 
