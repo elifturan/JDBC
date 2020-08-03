@@ -19,10 +19,10 @@ public class IteratingResultSet {
         rs.next();// currently we are at the second row
         System.out.println( rs.getString(1) + " " + rs.getString(2) );
 
-        rs.next(); // currently we are at the first row
+        rs.next(); // currently we are at the third row
         System.out.println( rs.getString("REGION_ID") + " " + rs.getString("REGION_NAME") );
 
-        rs.next();// currently we are at the second row
+        rs.next();// currently we are at the forth row
         System.out.println( rs.getString(1) + " " + rs.getString(2) );
 
 
