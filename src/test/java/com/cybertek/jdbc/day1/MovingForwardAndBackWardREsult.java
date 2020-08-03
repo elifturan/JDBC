@@ -1,4 +1,4 @@
-package com.cybertek.jdbc.Day1;
+package com.cybertek.jdbc.day1;
 
 import java.sql.*;
 
