@@ -20,6 +20,17 @@ public class MovingForwardAndBackWardWithResult {
         //ResultSet rs   =   stmnt.executeQuery("SELECT * FROM COUNTRIES WHERE REGION_ID = 1") ;
         ResultSet rs   =   stmnt.executeQuery("SELECT * FROM COUNTRIES") ;
 
+        rs.next() ;
+        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+
+        rs.next() ;
+        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+        // HOW DO I GO BACK TO PREVIOUS ROW
+        rs.previous();
+        System.out.println(rs.getString("COUNTRY_ID") + " " + rs.getString("COUNTRY_NAME"));
+
+
+
     }
 
 }
