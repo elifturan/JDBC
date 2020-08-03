@@ -67,6 +67,7 @@ public class DB_Connection {
         // RESULTSET -->> STATEMENT --> CONNECTION
         /// IT'S ALWAYS GOOD PRACTICE TO CLOSE THE RESOURCES ONCE FINISH USING THEM
         // TO AVOID ISSUES LATER.
+//------ cleaning up -----
         rs.close();
         stmnt.close();
         conn.close();

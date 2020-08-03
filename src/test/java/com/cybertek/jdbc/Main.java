@@ -31,7 +31,12 @@ public class Main {
         rs.next() ;  // now moved to next row
         System.out.println("First column value " + rs.getString(1) + " or " + rs.getString("REGION_ID") );
         System.out.println("SECOND column value " + rs.getString(2) + " or " + rs.getString("REGION_NAME") );
-        // test branch
+
+
+        //------ cleaning up -----
+        rs.close();
+        stmt.close();
+        conn.close();
 
     }
 }

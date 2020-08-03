@@ -44,7 +44,10 @@ public class IteratingResultSet {
 //        System.out.println(  rs.next()   );         ;// currently we are at the forth row
 //        //System.out.println( rs.getString(1) + " " + rs.getString(2) );
 
-
+//------ cleaning up -----
+        rs.close();
+        stmnt.close();
+        conn.close();
 
 
     }

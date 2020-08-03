@@ -42,8 +42,10 @@ public class IteratingResultSetBackward {
         // so in order to get the row count of the resultset
         // just return the last row number by moving cursor to last row and call getRow method
 
-
-
+//------ cleaning up -----
+        rs.close();
+        stmnt.close();
+        conn.close();
     }
 
 }

@@ -41,8 +41,10 @@ public class GettingMoreInfoAboutResultSet {
         // getting row count
         // we will use rs.last() to move to last row then call rs.getRow() method
                 // -- and that will be the row count of entire ResultSet
-
-
+//------ cleaning up -----
+        rs.close();
+        stmnt.close();
+        conn.close();
 
 
     }

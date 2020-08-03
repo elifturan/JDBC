@@ -46,8 +46,10 @@ public class MovingForwardAndBackWardWithResult {
         // how to move to after last row location
         rs.afterLast();
 
-
-
+//------ cleaning up -----
+        rs.close();
+        stmnt.close();
+        conn.close();
 
     }
 }

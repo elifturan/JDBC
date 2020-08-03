@@ -19,9 +19,12 @@ public class TestConnection {
         try {
             Connection conn = DriverManager.getConnection(connectionStr,username,password);
             System.out.println("CONNECTION Successful!!");
+            conn.close();
         } catch (SQLException throwables) {
             System.err.println("CONNECTION WAS NOT SUCCESSFUL \n" + throwables.getMessage());
         }
+
+
     }
 
 }
