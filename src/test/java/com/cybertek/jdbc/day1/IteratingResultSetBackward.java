@@ -11,7 +11,18 @@ public class IteratingResultSetBackward {
         String password = "hr";
         Connection conn = DriverManager.getConnection(connectionStr, username, password);
         Statement stmnt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet rs = stmnt.executeQuery("SELECT * FROM COUNTRIES");
+        ResultSet rs = stmnt.executeQuery("SELECT * FROM REGIONS");
+
+        //  first move to the after last location
+        //  then keep moving to previous row as long as there is more row above \
+        rs.afterLast();
+
+//        rs.previous();
+//        System.out.println(rs.getString(1) + " " + rs.getString(2));
+        while ( rs.previous()==true ){
+            System.out.println(rs.getString(1) + " " + rs.getString(2));
+        }
+
 
 
     }
