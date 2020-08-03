@@ -24,8 +24,10 @@ public class IteratingPractice {
 
         }
 //        rs.previous();
-
-
+//------ cleaning up -----
+        rs.close();
+        stmnt.close();
+        conn.close();
 
 
     }
