@@ -13,11 +13,18 @@ public class IteratingResultSet {
         Statement stmnt = conn.createStatement();
         ResultSet rs   =   stmnt.executeQuery("SELECT * FROM REGIONS") ;
 
-        rs.next();
+        rs.next(); // currently we are at the first row
+        System.out.println( rs.getString("REGION_ID") + " " + rs.getString("REGION_NAME") );
+
+        rs.next();// currently we are at the second row
         System.out.println( rs.getString(1) + " " + rs.getString(2) );
 
-        rs.next();
+        rs.next(); // currently we are at the first row
+        System.out.println( rs.getString("REGION_ID") + " " + rs.getString("REGION_NAME") );
+
+        rs.next();// currently we are at the second row
         System.out.println( rs.getString(1) + " " + rs.getString(2) );
+
 
 
 
