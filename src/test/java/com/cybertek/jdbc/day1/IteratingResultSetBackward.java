@@ -22,6 +22,15 @@ public class IteratingResultSetBackward {
         while ( rs.previous()==true ){
             System.out.println(rs.getString(1) + " " + rs.getString(2));
         }
+        System.out.println("----------- more moving ----------");
+        // how to move to second row from here
+        rs.absolute(2);
+        System.out.println(rs.getString(1) + " " + rs.getString(2));
+
+        rs.first();
+        System.out.println(rs.getString(1) + " " + rs.getString(2));
+        rs.last();
+        System.out.println(rs.getString(1) + " " + rs.getString(2));
 
 
 
