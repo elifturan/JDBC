@@ -13,6 +13,13 @@ public class GettingMoreInfoAboutResultSet {
         Statement stmnt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmnt.executeQuery("SELECT * FROM REGIONS");
 
+        // ResultSetMetadata is data about the ResultSet like column count , column name
+        // any many more info about the ResultSet itself
+        ResultSetMetaData rsmd = rs.getMetaData();
+        // counting how many columns we have in our ResultSet object
+        int columnCount =  rsmd.getColumnCount() ;
+        System.out.println("columnCount = " + columnCount);
+
 
     }
 
