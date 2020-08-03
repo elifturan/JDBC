@@ -15,7 +15,7 @@ public class IteratingResultSetBackward {
 
         //  first move to the after last location
         //  then keep moving to previous row as long as there is more row above \
-        rs.afterLast();
+        rs.afterLast(); // this will move cursor to the location after last row
 
 //        rs.previous();
 //        System.out.println(rs.getString(1) + " " + rs.getString(2));
@@ -23,13 +23,16 @@ public class IteratingResultSetBackward {
             System.out.println(rs.getString(1) + " " + rs.getString(2));
         }
         System.out.println("----------- more moving ----------");
+        // getRow() method return the row number
         // how to move to second row from here
         rs.absolute(2);
+        System.out.println("currently I should be at 2nd row " + rs.getRow()  );
+
         System.out.println(rs.getString(1) + " " + rs.getString(2));
 
-        rs.first();
+        rs.first(); // moving to first row
         System.out.println(rs.getString(1) + " " + rs.getString(2));
-        rs.last();
+        rs.last(); // moving to last row
         System.out.println(rs.getString(1) + " " + rs.getString(2));
 
         // how do I know which row number I am right now at this location
